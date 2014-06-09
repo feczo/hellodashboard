@@ -18,7 +18,7 @@ decorator = oauth2decorator_from_clientsecrets(
 
 
 class MainPage(webapp2.RequestHandler):
-    def get_given_name(self):
+    def _get_given_name(self):
         """Send a request to the UserInfo API to retrieve the user's given name.
 
         Returns:
@@ -42,7 +42,7 @@ class MainPage(webapp2.RequestHandler):
     @decorator.oauth_required
     def get(self):
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write('Hello %s!' % self.get_given_name())
+        self.response.write('Hello %s!' % self._get_given_name())
 
 application = webapp2.WSGIApplication([
     ('/', MainPage),
