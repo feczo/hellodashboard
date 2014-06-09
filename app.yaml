@@ -1,5 +1,5 @@
-application: hellodashboard
-version: bq
+application: s~google.com:dashdemo
+version: checkthis
 runtime: python27
 api_version: 1
 threadsafe: true
