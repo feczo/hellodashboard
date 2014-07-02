@@ -32,7 +32,7 @@ class MainPage(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/plain'
         bq = bqclient.BigQueryClient(decorator)
         modTime = bq.getLastModTime(DATA_PROJECT_ID, DATASET, TABLE)
-        if modTime is not None:
+        if modTime:
             msg = 'Last mod time = ' + modTime
         else:
             msg = "Could not find last modification time.\n"

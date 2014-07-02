@@ -18,7 +18,7 @@ class BigQueryClient(object):
 
     def getLastModTime(self, project, dataset, table):
         data = self.getTableData(project, dataset, table)
-        if data is not None and 'lastModifiedTime' in data:
+        if data and 'lastModifiedTime' in data:
             return data['lastModifiedTime']
         else:
             return None
